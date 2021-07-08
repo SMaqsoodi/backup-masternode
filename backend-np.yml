@@ -1,0 +1,13 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: mysql-allow
+spec:
+  podSelector:
+    matchLabels:
+      project: capstone
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          proejct: capstone
